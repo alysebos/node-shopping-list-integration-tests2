@@ -218,4 +218,22 @@ describe('Recipes', function () {
         expect(res).to.have.status(204);
       })
   })
+  it("should produce an error on a PUT request if id is wrong or missing", function() {
+    return chai
+      .request(app)
+      .put('/recipes/123')
+      .then(function(res) {
+        expect(res).to.have.status(400);
+      })
+  })
+  it("should produce an error on a POST request if information is missing", function () {
+    const newRecipe = {name: "pb&j"};
+    return chai
+      .request(app)
+      .post('/recipes')
+      .send(newRecipe)
+      .then(function(res) {
+        expect(res).to.have.status(400);
+      })
+  })
 })
