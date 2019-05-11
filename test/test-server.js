@@ -150,3 +150,72 @@ describe("Shopping List", function() {
     );
   });
 });
+
+describe('Recipes', function () {
+  before(function() {
+    return runServer();
+  })
+  after(function() {
+    return closeServer();
+  })
+  it("should list recipes on a GET request", function() {
+    return chai
+      .request(app)
+      .get("/recipes")
+      .then(function(res) {
+        expect(res).to.have.status(200);
+        expect(res).to.be.json;
+        expect(res.body).to.be.an("array");
+        expect(res.body.length).to.be.at.least(1);
+        let expectedKeys = ["id", "name", "ingredients"];
+        res.body.forEach(function(recipe) {
+          expect(recipe).to.be.an("object");
+          expect(recipe).to.include.keys(expectedKeys);
+        })
+      })
+  })
+  it("should post recipes on a POST request", function() {
+    let newRecipe = {name: "pb&j", ingredients: ["bread", "peanut butter", "jelly"]}
+    return chai
+      .request(app)
+      .post("/recipes")
+      .send(newRecipe)
+      .then(function(res) {
+        expect(res).to.have.status(201);
+        expect(res.body).to.be.an("object");
+        expect(res).to.be.json;
+        let expectedKeys = ["id", "name", "ingredients"];
+        expect(res.body).to.include.keys(expectedKeys);
+        expect(res.body.ingredients.length).to.be.at.least(1);
+      })
+  })
+  it("should delete recipes on a DELETE request", function() {
+    return chai
+      .request(app)
+      .get("/recipes")
+      .then(function(res) {
+        return chai
+          .request(app)
+          .delete(`/recipes/${res.body[0].id}`)
+      })
+      .then(function(res) {
+        expect(res).to.have.status(204);
+      })
+  })
+  it("should update recipes on a PUT request", function() {
+    return chai
+      .request(app)
+      .get("/recipes")
+      .then(function(res) {
+        const newRecipe = {name: "pb&j", ingredients: ["bread", "peanut butter", "jelly"]}
+        Object.assign(newRecipe, {id: res.body[0].id});
+        return chai
+          .request(app)
+          .put(`/recipes/${newRecipe.id}`)
+          .send(newRecipe)
+      })
+      .then(function(res) {
+        expect(res).to.have.status(204);
+      })
+  })
+})
