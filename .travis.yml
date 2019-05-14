@@ -4,6 +4,6 @@ deploy:
   provider: heroku
   api_key:
     secure: uheQ41GPbJhw5SOZ/P1utX4ZA4GscbaEYSH9+CXzwmXFL7OJKYV7b1MaFEtF5VV5ULbBx1dkxwxwtOlyQb0RfCkApAkelxK4MdZ1VTpGTeBUpnrOr/N7Fd6c7/sfB6pfpTelO1HKJgJPUxqAZCmy/XlXh/CLyUugdYDtINns9ITf2yEwElSkS2Up7ZBVFockxPa2u27ZL22IxsCj2URB5JHVVRi5h+J2nt1we/A4WKAAgSH+mLWNJmCFmFReKp38prXHlezjRNsxrhjSWBeyA/SpfxoVK19w2Y+gTmYSThvw0RxFJuc+9rj47Gm0Ax3et7NIp3JiNWq3QxOCzY8ZponHE1x6LnHawoWcwO89MbXj6kg08SkfvKGB6ccbIvzsmCxwvPixpUPFd51zXWkf0IKvjTmYt4W4FfYXvZlbI5ZugRdYSH4GCLPcPqa7z94SSrmrDk3Kk7Y9/RQR2WdTFldumIRcbV72TWAV3vtsBGL3CaxqDkacsiDRhk876SvsQ5grouOW8AsmNvvmvBonQ7WQCtJxvqkqveL93W9hyqhfbllqSzhnlNQhFZnmQ6gRUa92WR93oG3jB0K/+xllvLDs4jvYUghu7aWPGnrq6sKkAzBEn34+MR0lrSa/K2wcRcSAmag7qTc8YW8W/pqKYQlLYYx86e+rLMi01L+LZVg=
-  app: node-shopping-list-integration-tests2
+  app: still-sands-18345
   on:
     repo: alysebos/node-shopping-list-integration-tests2
