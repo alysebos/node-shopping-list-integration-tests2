@@ -24,7 +24,7 @@ var recipeTemplate =
   "</div>" +
   "</div>";
 
-var serverBase = "//localhost:8080/";
+var serverBase = "https://still-sands-18345.herokuapp.com/";
 var RECIPES_URL = serverBase + "recipes";
 var SHOPPING_LIST_URL = serverBase + "shopping-list";
 
