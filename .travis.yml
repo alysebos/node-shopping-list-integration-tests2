@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: lzH71pOLm8+5r4tttdsxcccccccccccccccccccc+33TuuBMzblSJqccxmBKMHjTu2+x7lzC3+gFnM9021qH2IZnMD82eZb8bCb/+VffjOIXJ5wIZ7pvGUCG3spIFKAqkpZiVScqLJNfh7fWVcBSB/EsVYEMsxWLY7kKwKlqDlufNDxhVzbWaFhBT+pZz8urLLaenrtjXVLKeDfMzfqOfoMo0as+knYnzqN4IQwNmOlDw9aoP6T1WuqMDRezZLxDePx41euqSbOrk0JlNL6vBXaWGopDl8VMe6flE37i/PIknW7T8bJW2mSt+Bzv8kfryFAYm20AzJtBh0Xd40c5IX/zwI8t5IcPKuVGJ/RkqbMZ9opOGjwPfTqbtBxALnR3Wd2p5S72Ipad1Z95PdF7yp7LyDPsxYf6JpiZHfo/m79CxV5Fpt2MHk8NQNQq4TFBBvOuCgTLrjHYZ3UGgO0uaf4pvA5ppS4PmxLImqnbu11+sEHbFkS20eqCvFywIoEwQBbjzB0IgZwiPOQnlLs2suNBF63fASsxezM+gUoY/gkqPl39A0LNyp2Av6dNLlegIUP9Wdnfo3OsnvpWFcfLl83LJUnsLR7SGZxQGfnNYwQDjCrU3SBv7JguaTAlffb9P4+h6kWaqXh0VVkI=
+  app: still-sands-18345
+  on:
+    repo: alysebos/node-shopping-list-integration-tests2
